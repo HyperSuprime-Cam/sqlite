@@ -1,0 +1,12 @@
+#!/bin/bash
+
+. "$EUPS_DIR/lib/eupspkg/functions"
+
+REPOSITORY="git://git.lsstcorp.org/personal/mjuric/eupspkg/external/$PRODUCT.git"
+
+MAKE_BUILD_TARGETS=all
+
+# sqlite's make install doesn't like to be run in parallel
+NJOBS=1
+
+"$@"
